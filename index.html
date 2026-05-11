@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>AzTik - Yaşıl Dizayn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #0a2a0a, #051005);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 450px;
+            width: 100%;
+            background: rgba(10, 26, 10, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 56px;
+            overflow: hidden;
+            box-shadow: 0 0 0 4px #1e3a1e, 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid #2a5a2a;
+        }
+
+        /* Yaşıl gradient başlıq */
+        .green-header {
+            background: linear-gradient(135deg, #2a6a1a, #509E2F, #1a4a0a);
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .green-header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+
+        .green-header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .content {
+            padding: 24px 20px;
+        }
+
+        .glass-card {
+            background: rgba(26, 46, 26, 0.6);
+            border-radius: 32px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #2a5a2a;
+        }
+
+        .glass-card h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input-modern {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 44px;
+            border: none;
+            background: #1a3a1a;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .btn-green {
+            width: 100%;
+            padding: 14px;
+            border-radius: 44px;
+            border: none;
+            background: #509E2F;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 8px rgba(80, 158, 47, 0.3);
+        }
+
+        .btn-green:active {
+            transform: scale(0.97);
+            background: #2a6a1a;
+        }
+
+        .action-link {
+            text-align: center;
+            margin-top: 16px;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .action-link span {
+            color: #6abe3a;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Oyun gridi */
+        .game-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 10px 0;
+        }
+
+        .game-btn {
+            flex: 1;
+            background: rgba(80, 158, 47, 0.2);
+            border: 1px solid #509E2F;
+            padding: 12px;
+            border-radius: 40px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .gift-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .gift-chip {
+            background: #1a3a1a;
+            padding: 8px 16px;
+            border-radius: 40px;
+            color: white;
+            cursor: pointer;
+            border: 1px solid #509E2F;
+        }
+
+        .balance-badge {
+            background: #509E2F;
+            padding: 6px 16px;
+            border-radius: 40px;
+            display: inline-block;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .chat-area {
+            background: #0a1a0a;
+            border-radius: 28px;
+            padding: 12px;
+            height: 160px;
+            overflow-y: auto;
+            margin: 15px 0;
+            border: 1px solid #2a5a2a;
+        }
+
+        .chat-msg {
+            color: #ccc;
+            padding: 8px 0;
+            border-bottom: 1px solid #2a5a2a;
+            font-size: 13px;
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 10px;
+        }
+        .flex-row input {
+            flex: 1;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="green-header">
+        <h1>🇦🇿 AZTİK 🇦🇿</h1>
+        <p>Canlı Yayım · TikTok Oyunlar · Hədiyyələr</p>
+    </div>
+
+    <div class="content">
+        <!-- Giriş bölməsi -->
+        <div id="loginSection" class="glass-card">
+            <h3>🔐 Daxil Ol</h3>
+            <input type="text" id="loginUser" class="input-modern" placeholder="İstifadəçi adı">
+            <input type="password" id="loginPass" class="input-modern" placeholder="Şifrə">
+            <button class="btn-green" onclick="login()">Daxil ol</button>
+            <div class="action-link">Hesabın yoxdur? <span onclick="toggleRegister()">Qeydiyyatdan keç</span></div>
+            <div id="loginError" style="color:#ef4444; text-align:center; margin-top:10px; font-size:12px;"></div>
+        </div>
+
+        <!-- Qeydiyyat bölməsi (gizli) -->
+        <div id="registerSection" class="glass-card" style="display:none;">
+            <h3>📝 Qeydiyyat</h3>
+            <input type="text" id="regUser" class="input-modern" placeholder="İstifadəçi adı">
+            <input type="email" id="regEmail" class="input-modern" placeholder="Email">
+            <input type="password" id="regPass" class="input-modern" placeholder="Şifrə">
+            <input type="password" id="regPass2" class="input-modern" placeholder="Şifrə təkrar">
+            <button class="btn-green" onclick="register()">Qeydiyyat</button>
+            <div class="action-link"><span onclick="toggleLogin()">Zaten hesabın var? Daxil ol</span></div>
+            <div id="regError" style="color:#ef4444; text-align:center; margin-top:8px;"></div>
+            <div id="regSuccess" style="color:#6abe3a; text-align:center; margin-top:8px;"></div>
+        </div>
+
+        <!-- Əsas panel (girişdən sonra) -->
+        <div id="mainPanel" style="display:none;">
+            <!-- Canlı yayım -->
+            <div class="glass-card">
+                <h3>🔴 Canlı Yayım</h3>
+                <button class="btn-green" onclick="alert('🎥 Canlı yayım başladı!')">Başlat / İzlə</button>
+            </div>
+
+            <!-- Oyunlar -->
+            <div class="glass-card">
+                <h3>🎮 TikTok Oyunlar</h3>
+                <div class="game-grid">
+                    <div class="game-btn" onclick="alert('🐍 İlan oyunu açılır...')">🐍 İlan</div>
+                    <div class="game-btn" onclick="alert('🧩 Tetris açılır...')">🧩 Tetris</div>
+                    <div class="game-btn" onclick="alert('🐦 Flappy Bird açılır...')">🐦 Quş</div>
+                    <div class="game-btn" onclick="alert('🔢 2048 açılır...')">🔢 2048</div>
+                </div>
+            </div>
+
+            <!-- Hədiyyələr -->
+            <div class="glass-card">
+                <h3>🎁 Premium Hədiyyələr</h3>
+                <div><span class="balance-badge" id="balanceDisplay">💰 Balans: 1000</span></div>
+                <div class="gift-wrapper">
+                    <div class="gift-chip" onclick="sendGift('🌹',5)">🌹 5</div>
+                    <div class="gift-chip" onclick="sendGift('❤️',10)">❤️ 10</div>
+                    <div class="gift-chip" onclick="sendGift('🧸',25)">🧸 25</div>
+                    <div class="gift-chip" onclick="sendGift('💎',100)">💎 100</div>
+                    <div class="gift-chip" onclick="sendGift('👑',200)">👑 200</div>
+                    <div class="gift-chip" onclick="sendGift('🚀',300)">🚀 300</div>
+                </div>
+                <div id="giftMsg" style="color:#6abe3a; text-align:center; font-size:12px;"></div>
+            </div>
+
+            <!-- Chat -->
+            <div class="glass-card">
+                <h3>💬 Canlı Söhbət</h3>
+                <div class="chat-area" id="chatBox">
+                    <div class="chat-msg">🤖 AZTİK: Xoş gəldin!</div>
+                </div>
+                <div class="flex-row">
+                    <input type="text" id="chatInput" class="input-modern" placeholder="Mesaj yaz..." style="margin-bottom:0;">
+                    <button class="btn-green" style="width:80px;" onclick="sendChatMsg()">Göndər</button>
+                </div>
+            </div>
+
+            <button class="btn-green" onclick="logout()" style="background:#2a5a2a;">🚪 Çıxış</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let users = JSON.parse(localStorage.getItem('aztik_users')) || [];
+    let currentUser = localStorage.getItem('aztik_user') || null;
+    let balance = localStorage.getItem('aztik_balance') ? parseInt(localStorage.getItem('aztik_balance')) : 1000;
+    let messages = JSON.parse(localStorage.getItem('aztik_chat')) || [{user:"🤖 AZTİK", text:"Xoş gəldin!"}];
+
+    function saveUsers() { localStorage.setItem('aztik_users', JSON.stringify(users)); }
+    function saveBalance() { localStorage.setItem('aztik_balance', balance); }
+    function saveChat() { localStorage.setItem('aztik_chat', JSON.stringify(messages)); }
+
+    function updateBalanceUI() { document.getElementById('balanceDisplay').innerHTML = `💰 Balans: ${balance}`; }
+    function renderChat() {
+        let container = document.getElementById('chatBox');
+        if(container) {
+            container.innerHTML = messages.map(m => `<div class="chat-msg"><strong>${escapeHtml(m.user)}:</strong> ${escapeHtml(m.text)}</div>`).join('');
+            container.scrollTop = container.scrollHeight;
+        }
+    }
+
+    function escapeHtml(str) { return str.replace(/[&<>]/g, function(m) { return m === '&' ? '&amp;' : (m === '<' ? '&lt;' : '&gt;'); }); }
+    function toggleRegister() { document.getElementById('loginSection').style.display = 'none'; document.getElementById('registerSection').style.display = 'block'; }
+    function toggleLogin() { document.getElementById('registerSection').style.display = 'none'; document.getElementById('loginSection').style.display = 'block'; }
+
+    function login() {
+        let user = document.getElementById('loginUser').value.trim();
+        let pass = document.getElementById('loginPass').value.trim();
+        let found = users.find(u => u.user === user && u.pass === pass);
+        if(found) {
+            currentUser = user;
+            localStorage.setItem('aztik_user', user);
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('mainPanel').style.display = 'block';
+            updateBalanceUI();
+            renderChat();
+        } else {
+            document.getElementById('loginError').innerText = '❌ İstifadəçi adı və ya şifrə yanlış!';
+        }
+    }
+
+    function register() {
+        let user = document.getElementById('regUser').value.trim();
+        let email = document.getElementById('regEmail').value.trim();
+        let pass = document.getElementById('regPass').value.trim();
+        let pass2 = document.getElementById('regPass2').value.trim();
+        if(!user || !email || !pass) { document.getElementById('regError').innerText = '❌ Bütün xanaları doldurun!'; return; }
+        if(pass !== pass2) { document.getElementById('regError').innerText = '❌ Şifrələr eyni deyil!'; return; }
+        if(users.find(u => u.user === user)) { document.getElementById('regError').innerText = '❌ Bu istifadəçi adı artıq var!'; return; }
+        users.push({user: user, email: email, pass: pass});
+        saveUsers();
+        document.getElementById('regSuccess').innerText = '✅ Qeydiyyat tamamlandı! İndi daxil olun.';
+        setTimeout(() => { toggleLogin(); }, 1500);
+    }
+
+    function sendGift(emoji, cost) {
+        if (balance >= cost) {
+            balance -= cost;
+            saveBalance();
+            updateBalanceUI();
+            document.getElementById('giftMsg').innerHTML = `✅ ${emoji} hədiyyəsi göndərildi! -${cost} bal`;
+            alert(`🎁 ${emoji} hədiyyəsi göndərildi!`);
+        } else {
+            document.getElementById('giftMsg').innerHTML = `❌ Kifayət qədər bal yoxdur (${cost} bal lazım)`;
+        }
+    }
+
+    function sendChatMsg() {
+        let input = document.getElementById('chatInput');
+        let text = input.value.trim();
+        if(!text) return;
+        let sender = currentUser || 'İstifadəçi';
+        messages.push({user: sender, text: text});
+        if(messages.length > 50) messages.shift();
+        saveChat();
+        renderChat();
+        input.value = '';
+    }
+
+    function logout() {
+        currentUser = null;
+        localStorage.removeItem('aztik_user');
+        document.getElementById('mainPanel').style.display = 'none';
+        document.getElementById('loginSection').style.display = 'block';
+        document.getElementById('loginUser').value = '';
+        document.getElementById('loginPass').value = '';
+    }
+
+    if(currentUser) {
+        document.getElementById('loginSection').style.display = 'none';
+        document.getElementById('mainPanel').style.display = 'block';
+        updateBalanceUI();
+        renderChat();
+    }
+</script>
+</body>
+</html>
