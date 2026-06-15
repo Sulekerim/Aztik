@@ -1,0 +1,30 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "<!DOCTYPE html> <html lang=\"az\"> <head>     <meta charset=\"UTF-8\">     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=yes\">     <title>Proqram Azbeysk - Bütün proqramlar bir yerdə</title>     <style>         * {             margin: 0;             padding: 0;             box-sizing: border-box;         }         body {             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;             background: linear-gradient(135deg, #0f2b3d 0%, #1a4a6f 100%);             color: #f0f4f8;             padding: 20px;         }         .container {             max-width: 1300px;             margin: 0 auto;         }         h1 {             text-align: center;             font-size: 2.5rem;             margin: 20px 0 10px;             letter-spacing: 2px;             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);         }         .basliq-alt {             text-align: center;             margin-bottom: 40px;             color: #cce7f5;             font-size: 1.1rem;         }         .search-box {             text-align: center;             margin-bottom: 40px;         }         #search {             width: 90%;             max-width: 500px;             padding: 14px 20px;             border-radius: 50px;             border: none;             font-size: 1rem;             outline: none;             background: #ffffff;             color: #1a2a3a;             box-shadow: 0 4px 10px rgba(0,0,0,0.2);         }         .category {             background: rgba(255,255,255,0.1);             border-radius: 20px;             margin-bottom: 30px;             padding: 20px;             backdrop-filter: blur(5px);         }         .category h2 {             font-size: 1.8rem;             border-left: 5px solid #ffb74d;             padding-left: 15px;             margin-bottom: 20px;         }         .apps-grid {             display: grid;             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));             gap: 15px;         }         .app-card {             background: rgba(0,0,0,0.3);             padding: 12px 18px;             border-radius: 14px;             transition: 0.2s;             border-left: 3px solid #ffb74d;         }         .app-card strong {             font-size: 1.2rem;             display: block;             margin-bottom: 6px;             color: #ffd966;         }         .app-card p {             font-size: 0.9rem;             opacity: 0.9;         }         .footer {             text-align: center;             margin-top: 40px;             padding: 20px;             font-size: 0.85rem;             border-top: 1px solid rgba(255,255,255,0.2);         }         @media (max-width: 700px) {             h1 { font-size: 1.8rem; }             .category h2 { font-size: 1.4rem; }             .apps-grid { grid-template-columns: 1fr; }         }     </style> </head> <body> <div class=\"container\">     <h1>📱 PROQRAM AZBEYSK</h1>     <div class=\"basliq-alt\">Bütün mövzularda ən yaxşı proqramlar – Reklam, Əyləncə, Oyun, Təhsil və daha çox</div>",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sulekerim/Aztik.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sulekerim/Aztik/issues"
+  },
+  "homepage": "https://github.com/Sulekerim/Aztik#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.16"
+  }
+}
