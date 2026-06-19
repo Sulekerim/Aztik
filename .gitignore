@@ -2,3 +2,24 @@
 .settings
 salesforce.schema
 Referenced Packages
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+.vite/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
